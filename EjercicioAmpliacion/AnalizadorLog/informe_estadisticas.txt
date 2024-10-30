@@ -1,0 +1,10 @@
+Estadísticas de Niveles de Log:
+ERROR: 4
+INFO: 4
+WARNING: 2
+
+Top 5 Mensajes de Error Más Comunes:
+ERROR No se pudo enviar el correo electrónico de confirmación.: 1
+ERROR La solicitud de usuario ha fallado.: 1
+ERROR Error al guardar los datos del usuario.: 1
+ERROR No se pudo conectar a la base de datos.: 1

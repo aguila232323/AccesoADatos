@@ -1,0 +1,10 @@
+2024-10-30 10:00:00 INFO El sistema ha iniciado correctamente.
+2024-10-30 10:01:00 WARNING El uso de memoria está cerca del límite.
+2024-10-30 10:02:00 ERROR No se pudo conectar a la base de datos.
+2024-10-30 10:03:00 INFO El usuario se ha autenticado con éxito.
+2024-10-30 10:04:00 ERROR Error al guardar los datos del usuario.
+2024-10-30 10:05:00 INFO Se ha recibido una solicitud de usuario.
+2024-10-30 10:06:00 ERROR La solicitud de usuario ha fallado.
+2024-10-30 10:07:00 WARNING La conexión a la API externa es lenta.
+2024-10-30 10:08:00 INFO Procesando la solicitud de usuario.
+2024-10-30 10:09:00 ERROR No se pudo enviar el correo electrónico de confirmación.
