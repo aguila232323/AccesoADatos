@@ -38,7 +38,7 @@ public class Empleado implements Serializable {
         this.sueldo = new SimpleDoubleProperty();
     }
 
-    // Getters y Setters para las propiedades
+  
     public int getId() {
         return id.get();
     }

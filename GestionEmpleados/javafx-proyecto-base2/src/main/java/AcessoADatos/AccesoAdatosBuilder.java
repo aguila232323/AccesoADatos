@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AccesoAdatosBuilder {
 
-    // Columnas de la tabla con sus tipos correctos
+    
     @FXML
     private TableColumn<Empleado, Integer> idEmpleado;
     @FXML
@@ -28,7 +28,7 @@ public class AccesoAdatosBuilder {
     @FXML
     private TableColumn<Empleado, Double> SueldoEmpleado;
 
-    // Botones
+    
     @FXML
     private Button btnActulizar;
     @FXML
@@ -42,7 +42,7 @@ public class AccesoAdatosBuilder {
     @FXML
     private Button btnInsertar;
 
-    // Campos de texto
+   
     @FXML
     private TextField campoApellidos;
     @FXML
@@ -184,10 +184,10 @@ public class AccesoAdatosBuilder {
     
     @FXML
     void EmpleadoTabla(MouseEvent event) {
-        // Obtener el empleado seleccionado en la tabla
+        
         Empleado empleadoSeleccionado = tablaEmpleados.getSelectionModel().getSelectedItem();
 
-        // Si un empleado ha sido seleccionado, llenar los campos de texto con los datos del empleado
+        
         if (empleadoSeleccionado != null) {
             campoNombre.setText(empleadoSeleccionado.getNombre());
             campoApellidos.setText(empleadoSeleccionado.getApellidos());
@@ -197,22 +197,22 @@ public class AccesoAdatosBuilder {
     }
 
 
-    // Exportar datos a XML
+    
     @FXML
     void exportarXML(ActionEvent event) {
         try {
-            // Convertir ObservableList a List
+            
             List<Empleado> listaEmpleados = empleados;
 
-            // Crear un contenedor con la lista de empleados
+            
             EmpleadoListWrapper wrapper = new EmpleadoListWrapper(listaEmpleados);
 
-            // Configurar JAXB para convertir la lista en XML
+            
             JAXBContext context = JAXBContext.newInstance(EmpleadoListWrapper.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-            // Escribir el XML a un archivo
+            
             try (FileOutputStream fileOutputStream = new FileOutputStream(configuracion.obtenerRutaXML())) {
                 marshaller.marshal(wrapper, fileOutputStream);
             }
@@ -225,7 +225,7 @@ public class AccesoAdatosBuilder {
     }
 
 
-    // Exportar datos a JSON
+    
     @FXML
     void exportarJSON(ActionEvent event) {
         try {
@@ -241,15 +241,15 @@ public class AccesoAdatosBuilder {
         }
     }
 
-    // Importar datos desde XML
+    
     @FXML
     void importarXML(ActionEvent event) {
         try {
-            // Configurar JAXB para leer el XML
+            
             JAXBContext context = JAXBContext.newInstance(EmpleadoListWrapper.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
 
-            // Leer el XML desde un archivo
+            
             File file = new File(configuracion.obtenerRutaXML());
             if (file.exists()) {
                 EmpleadoListWrapper wrapper = (EmpleadoListWrapper) unmarshaller.unmarshal(file);
@@ -268,7 +268,7 @@ public class AccesoAdatosBuilder {
     }
 
 
-    // Importar datos desde JSON
+   
     @FXML
     void importarJSON(ActionEvent event) {
         try {
@@ -294,7 +294,7 @@ public class AccesoAdatosBuilder {
         }
     }
 
-    // Guardar los datos en binario
+   
     private void guardarDatosBinarios() {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("empleados.dat"))) {
             out.writeObject(empleados);
@@ -303,7 +303,7 @@ public class AccesoAdatosBuilder {
         }
     }
 
-    // Cargar los datos en binario
+    
     private void cargarDatosBinarios() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("empleados.dat"))) {
             empleados = (ObservableList<Empleado>) in.readObject();
