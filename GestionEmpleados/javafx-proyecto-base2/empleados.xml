@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<empleadoListWrapper>
+    <empleado>
+        <apellidos>Prados</apellidos>
+        <departamento>3443</departamento>
+        <id>7</id>
+        <nombre>alvaro</nombre>
+        <sueldo>3433.0</sueldo>
+    </empleado>
+</empleadoListWrapper>
